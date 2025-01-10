@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acércate con otros - Sistema Solar</title>
+    <style>
+        /* Reset de márgenes y paddings por defecto */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 30px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        section:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .canales-y-videos {
+            margin-top: 30px;
+        }
+
+        .canal {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .canal h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .canal p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .canal a {
+            color: #FF5733;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .video-container {
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .video {
+            width: 320px;
+            height: 180px;
+            background-color: #f4f4f9;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .formulario-experto {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .formulario-experto h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .formulario-experto label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .formulario-experto input[type="text"],
+        .formulario-experto textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .formulario-experto button {
+            background-color: #FF5733;
+            color: white;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .formulario-experto button:hover {
+            background-color: #FF4500;
+        }
+
+        .mensaje-confirmacion {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #FFD700;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            display: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .canal, .video {
+                width: 100%;
+            }
+
+            .video-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>Acércate con otros - Sistema Solar</h1>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="principal.html">Principal</a></li>
+                <li><a href="quiere_saber_mas.html">¿Quieres saber más?</a></li>
+                <li><a href="suscripcion.html">Suscripción</a></li>
+                <li><a href="acercate.html">Acércate con otros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de "Acércate con otros" -->
+    <section id="acercate-con-otros">
+        <h2>Conoce más sobre el Sistema Solar con estos canales y videos</h2>
+        
+        <!-- Sección de canales de YouTube -->
+        <div class="canales-y-videos">
+            <h3>Canales de YouTube sobre el Sistema Solar</h3>
+
+            <!-- Canal 1 -->
+            <div class="Date un Blog">
+                <h3>Nombre del Canal 1</h3>
+                <p> "Date un Blog" es un canal de YouTube dirigido por el creador de contenido español Antonio. Este canal está enfocado en explicar de manera clara y sencilla conceptos científicos y temas astronómicos, buscando hacer que la ciencia sea accesible y atractiva para todos. Con un enfoque educativo, Antonio utiliza gráficos, animaciones y ejemplos cotidianos para explicar fenómenos cósmicos, planetas, estrellas, y eventos astronómicos. Además, comparte noticias y curiosidades relacionadas con el espacio y la ciencia de una manera amena y entretenida.</p>
+                <a href="https://youtube.com/@dateunvlog?si=9zSAgx0E-TQceKcg" target="_blank">Visita su canal aquí</a>
+            </div>
+
+            <!-- Canal 2 -->
+            <div class=" Veritasium">
+                <h3>Nombre del Canal 2</h3>
+                <p>"Veritasium" es un canal creado por Derek Muller, un físico y educador. En su canal, Derek explora una amplia variedad de temas científicos, con un énfasis en la física, la astronomía y los misterios del universo. Veritasium se caracteriza por su estilo único de explicar conceptos complejos de una manera visual y entretenida, utilizando demostraciones, experimentos y entrevistas con expertos. A través de sus videos, Muller busca fomentar la curiosidad científica, ofreciendo explicaciones accesibles y estimulantes sobre las maravillas del cosmos.</p>
+                <a href="https://youtube.com/@veritasium?si=eO57rnnaKhsh8SpN" target="_blank">Visita su canal aquí</a>
+            </div>
+
+            <!-- Canal 3 -->
+            <div class="Anton Petrov">
+                <h3>Nombre del Canal 3</h3>
+                <p>Canal enfocado en la divulgación astronómica, donde Anton Petrov analiza los últimos avances en el campo de la ciencia espacial y presenta información sobre el universo de una forma accesible para todo tipo de público.</p>
+                <a href="https://youtube.com/@whatdamath?si=P3-vg2nma2P6SNm1" target="_blank">Visita su canal aquí</a>
+            </div>
+
+        </div>
+
+        <!-- Sección de Videos -->
+        <div class="canales-y-videos">
+            <h3>Videos sobre el Sistema Solar</h3>
+            <div class="video-container">
+                <!-- Video 1 -->
+                <div class="video">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/1Q_ID3njy9A?si=BQwRykGW85CMi8dT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="video">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/kU45q-tzy08?si=nHuWVF_jSkKMWQkg&amp;start=3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="video">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/hdu_SJsPo3s?si=G67C6rLMvvpBTj_E&amp;start=3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario para hablar con expertos -->
+        <div class="formulario-experto">
+            <h3>¿Quieres hablar con expertos sobre el Sistema Solar?</h3>
+            <p>Rellena el siguiente formulario para ponerte en contacto con los mejores especialistas:</p>
+            <label for="nombre">Tu nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre...">
+
+            <label for="telefono">Número de teléfono:</label>
+            <input type="text" id="telefono" name="telefono" placeholder="Escribe tu número...">
+
+            <label for="correo">Correo electrónico:</label>
+            <input type="text" id="correo" name="correo" placeholder="Escribe tu correo...">
+
+            <label for="especialista">Con quién te gustaría hablar:</label>
+            <input type="text" id="especialista" name="especialista" placeholder="Nombre del especialista...">
+
+            <label for="razon">¿Por qué quieres hablar con él/ella?</label>
+            <textarea id="razon" name="razon" placeholder="Explica el motivo..." rows="4"></textarea>
+
+            <button type="button" onclick="mostrarMensaje()">Enviar Solicitud</button>
+
+            <!-- Mensaje de confirmación -->
+            <div id="mensajeConfirmacion" class="mensaje-confirmacion" style="display: none;">
+                Te pondremos en contacto con dicho especialista. ¡Gracias por tu interés!
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Sistema Solar. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Función para mostrar el mensaje de confirmación
+        function mostrarMensaje() {
+            document.getElementById('mensajeConfirmacion').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

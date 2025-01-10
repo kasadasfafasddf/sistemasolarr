@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal - Sistema Solar</title>
+    <style>
+        /* Reset de márgenes y paddings por defecto */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 30px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        section:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .imagen {
+            max-width: 80%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .imagen:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Estilos para el diseño responsivo */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .imagen {
+                width: 70%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>Sistema Solar - Información Principal</h1>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="datos_curiosos.html">Datos Curiosos</a></li>
+                <li><a href="quieresabermas.html">¿Quieres saber más?</a></li>
+                <li><a href="suscripcion.html">Suscripción</a></li>
+                <!-- Nuevo botón agregado -->
+                <li><a href="acercate.html">Acercate con otros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Información Principal sobre el Sistema Solar -->
+    <section id="principal">
+        <h2>¿Qué es el Sistema Solar?</h2>
+        <p>El Sistema Solar es un conjunto de cuerpos celestes que están unidos por la atracción gravitacional del Sol. Este sistema incluye al Sol, los ocho planetas (Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano y Neptuno), así como sus lunas, asteroides, cometas y otros objetos menores. El Sol, en el centro del sistema, es una estrella que genera la energía necesaria para mantener la vida en la Tierra.</p>
+
+        <p>El Sistema Solar se formó hace aproximadamente 4.6 mil millones de años a partir de una nube de gas y polvo que se colapsó bajo su propia gravedad. A medida que el material se acumulaba en el centro, se formó el Sol, mientras que los restos sobrantes formaron los planetas y otros cuerpos celestes.</p>
+
+        <p>Los planetas del Sistema Solar están divididos en dos grupos: los planetas rocosos (Mercurio, Venus, Tierra y Marte) que están más cerca del Sol, y los planetas gaseosos (Júpiter, Saturno, Urano y Neptuno) que se encuentran más lejos. Los planetas rocosos son más pequeños y están compuestos principalmente de roca y metal, mientras que los planetas gaseosos son mucho más grandes y están compuestos en su mayoría de gases como hidrógeno y helio.</p>
+
+        <p>Además de los planetas, el Sistema Solar está lleno de asteroides, cometas y otros objetos. Estos se encuentran en diferentes áreas, como el Cinturón de Asteroides entre Marte y Júpiter, y el Cinturón de Kuiper, una región más allá de Neptuno que contiene objetos como Plutón.</p>
+
+        <h2>Imagen del Sistema Solar</h2>
+        <img src="imagenes/sistem.jpg" alt="Imagen del Sistema Solar" class="imagen">
+
+        <h2>¿Por qué es importante el Sistema Solar?</h2>
+        <p>El Sistema Solar no solo es fascinante por su tamaño y complejidad, sino también porque es el hogar de la Tierra, nuestro planeta, que es el único conocido hasta el momento que alberga vida. Comprender cómo funciona el Sistema Solar y sus cuerpos celestes nos ayuda a entender mejor nuestro lugar en el universo y las condiciones que hacen posible la vida en nuestro planeta.</p>
+
+        <p>Los avances en la astronomía y la exploración espacial también nos han permitido descubrir nuevos planetas fuera de nuestro Sistema Solar, conocidos como exoplanetas, lo que abre la puerta a la posibilidad de vida en otros rincones del cosmos.</p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Sistema Solar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

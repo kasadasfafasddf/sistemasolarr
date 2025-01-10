@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Solar</title>
+    <style>
+        /* Reset de márgenes y paddings por defecto */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding: 30px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            width: 100%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        section:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 20px 10px;
+            background-color: #333;
+            color: white;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .imagen {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+            margin-bottom: 20px;
+        }
+
+        .imagen-pequena {
+            width: 50%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .imagen:hover {
+            transform: scale(1.1);
+        }
+
+        /* Estilos para la galería de imágenes */
+        #imagenes div {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #imagenes img {
+            flex: 1 1 30%;
+            max-width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Estilos para el diseño responsivo */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 25px;
+                font-size: 16px;
+                margin: 20px 5px;
+            }
+
+            .imagen-pequena {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>Sistema Solar</h1>
+    </header>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio">
+        <h2>Bienvenido al Sistema Solar</h2>
+        <p>En esta página aprenderás sobre el Sistema Solar, sus planetas y mucho más. ¡Explora y descubre!</p>
+
+        <!-- Botones para redirigir a otras secciones -->
+        <div>
+            <a href="principal.html" class="btn">Principal</a>
+            <a href="datos_curiosos.html" class="btn">Datos Curiosos</a>
+            <a href="quiere_saber_mas.html" class="btn">¿Quieres saber más?</a>
+            <a href="suscripcion.html" class="btn">Suscripción</a>
+            <!-- Botón agregado para redirigir a acercate.html -->
+            <a href="acercate.html" class="btn">Acércate con otros</a>
+        </div>
+    </section>
+
+    <!-- Sección del Sistema Solar -->
+    <section id="sistema-solar">
+        <h2>¿Qué es el Sistema Solar?</h2>
+        <p>El Sistema Solar está formado por el Sol, ocho planetas y otros cuerpos celestes. El Sol es la estrella en el centro, y los planetas giran a su alrededor.</p>
+        <img src="imagenes/th.jpg" alt="Imagen del Sistema Solar" class="imagen imagen-pequena">
+    </section>
+
+    <!-- Sección de Los Planetas -->
+    <section id="planetas">
+        <h2>Los Planetas del Sistema Solar</h2>
+        <p>El Sistema Solar tiene ocho planetas: Mercurio, Venus, Tierra, Marte, Júpiter, Saturno, Urano y Neptuno. Cada uno tiene características únicas.</p>
+        <img src="imagenes/dostresplanetas.jpg" alt="Imagen de los Planetas" class="imagen imagen-pequena">
+    </section>
+
+    <!-- Sección de Galería de Imágenes -->
+    <section id="imagenes">
+        <h2>Galería de Imágenes del Sistema Solar</h2>
+        <div>
+            <picture>
+                <img src="imagenes/mercurio.jpg" alt="Mercurio" class="imagen" loading="lazy">
+            </picture>
+            <picture>
+                <img src="imagenes/venus.jpg" alt="Venus" class="imagen" loading="lazy">
+            </picture>
+            <picture>
+                <img src="imagenes/tierra.jpg" alt="Tierra" class="imagen" loading="lazy">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Sistema Solar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+

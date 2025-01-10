@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Curiosos - Sistema Solar</title>
+    <style>
+        /* Reset de márgenes y paddings por defecto */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #FFD700;
+            transform: scale(1.1);
+        }
+
+        .btn-acercate {
+            color: white;
+            background-color: #FF5733;
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-acercate:hover {
+            background-color: #FF4500;
+        }
+
+        section {
+            padding: 30px;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        section:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .dato-curioso {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f4f4f9;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .dato-curioso:hover {
+            background-color: #FFD700;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .informacion {
+            display: none;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Estilos para el diseño responsivo */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <script>
+        // Función para manejar el clic en un dato curioso y desplegar la información
+        function toggleInformacion(id) {
+            const info = document.getElementById(id);
+            const otrosDatos = document.querySelectorAll('.informacion');
+
+            // Cerrar todos los demás datos curiosos
+            otrosDatos.forEach(function(dato) {
+                if (dato !== info) {
+                    dato.style.display = 'none';
+                }
+            });
+
+            // Alternar el dato curioso actual
+            info.style.display = info.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>Datos Curiosos del Sistema Solar</h1>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="principal.html">Principal</a></li>
+                <li><a href="quieresabermas.html">¿Quieres saber más?</a></li>
+                <li><a href="suscripcion.html">Suscripción</a></li>
+                <li><a href="acercate.html">Acercate con otros</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Datos Curiosos -->
+    <section id="datos-curiosos">
+        <h2>Datos Curiosos del Sistema Solar</h2>
+
+        <!-- Dato curioso 1 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato1')">¿Sabías que el Sol quema?</div>
+            <div id="dato1" class="informacion">
+                El Sol es una enorme bola de gas extremadamente caliente. Su temperatura superficial es de alrededor de 5,500 grados Celsius, y en su núcleo alcanza unos 15 millones de grados Celsius. Sin embargo, el Sol no "quema" como el fuego; la energía proviene de una reacción nuclear llamada fusión.
+            </div>
+        </div>
+
+        <!-- Dato curioso 2 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato2')">¿Sabías que Venus es más caliente que Mercurio?</div>
+            <div id="dato2" class="informacion">
+                Aunque Venus está más lejos del Sol que Mercurio, su atmósfera densa y llena de dióxido de carbono genera un efecto invernadero extremo, lo que lo convierte en el planeta más caliente de nuestro Sistema Solar. Las temperaturas en la superficie de Venus pueden superar los 460 grados Celsius.
+            </div>
+        </div>
+
+        <!-- Dato curioso 3 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato3')">¿Sabías que Júpiter tiene un gran cinturón de radiación?</div>
+            <div id="dato3" class="informacion">
+                Júpiter, el gigante gaseoso, tiene un fuerte campo magnético que crea un enorme cinturón de radiación alrededor del planeta. Este cinturón es tan intenso que las sondas espaciales deben protegerse adecuadamente para evitar daños por la radiación durante su exploración.
+            </div>
+        </div>
+
+        <!-- Dato curioso 4 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato4')">¿Sabías que Marte tiene el volcán más grande del Sistema Solar?</div>
+            <div id="dato4" class="informacion">
+                El volcán Olympus Mons en Marte es el volcán más grande conocido en el Sistema Solar. Su altura es aproximadamente 22 km, tres veces más alto que el Monte Everest. Este volcán tiene un diámetro de unos 600 km.
+            </div>
+        </div>
+
+        <!-- Dato curioso 5 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato5')">¿Sabías que Saturno podría flotar en agua?</div>
+            <div id="dato5" class="informacion">
+                Saturno es tan liviano en comparación con su tamaño que si pudieras encontrar una piscina lo suficientemente grande, ¡el planeta entero flotaría en ella! Esto se debe a que su densidad es menor que la del agua.
+            </div>
+        </div>
+
+        <!-- Dato curioso 6 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato6')">¿Sabías que Urano rota de lado?</div>
+            <div id="dato6" class="informacion">
+                Urano es el único planeta en el Sistema Solar que rota de lado en relación a su órbita. Su inclinación axial es de aproximadamente 98 grados, lo que significa que sus polos están casi en el plano de su órbita, causando que sus estaciones sean extremadamente inusuales.
+            </div>
+        </div>
+
+        <!-- Dato curioso 7 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato7')">¿Sabías que los anillos de Saturno son más finos que una hoja de papel?</div>
+            <div id="dato7" class="informacion">
+                Los anillos de Saturno son increíblemente delgados, con un grosor de solo unos pocos kilómetros, pero se extienden por miles de kilómetros. Están formados por partículas de hielo y rocas que orbitan alrededor del planeta.
+            </div>
+        </div>
+
+        <!-- Dato curioso 8 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato8')">¿Sabías que Plutón ya no es considerado un planeta?</div>
+            <div id="dato8" class="informacion">
+                Plutón fue reclasificado en 2006 por la Unión Astronómica Internacional como un "planeta enano" debido a que no cumple con todos los requisitos para ser considerado un planeta principal. Esta decisión fue muy polémica.
+            </div>
+        </div>
+
+        <!-- Dato curioso 9 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato9')">¿Sabías que Neptuno tiene vientos supersónicos?</div>
+            <div id="dato9" class="informacion">
+                Neptuno tiene algunos de los vientos más rápidos del Sistema Solar, que pueden alcanzar hasta los 2,400 km/h. Estos vientos son más rápidos que los de cualquier otro planeta conocido.
+            </div>
+        </div>
+
+        <!-- Dato curioso 10 -->
+        <div>
+            <div class="dato-curioso" onclick="toggleInformacion('dato10')">¿Sabías que la Luna tiene "lunas"?</div>
+            <div id="dato10" class="informacion">
+                Aunque la Luna no tiene lunas en el sentido tradicional, existen pequeñas rocas que orbitan alrededor de ella. Estas "lunas" son conocidos como "satélites irregulares" y son extremadamente pequeñas.
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Sistema Solar. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
